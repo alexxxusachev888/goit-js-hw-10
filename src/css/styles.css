@@ -23,14 +23,19 @@ body {
   font-size: 20px;
 }
 .country__img {
-  width: 40px;
-  height: 40px;
+  width: 200px;
+  height: 100px;
 }
-.country__name {
+
+.country__list {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
 }
-.country__capital {
+.country__list-img {
+  height: 30px;
+  width: 50px;
 }
-.country__pop {
-}
-.country__lang {
+.country__list-name {
+  margin-left: 10px;
 }
