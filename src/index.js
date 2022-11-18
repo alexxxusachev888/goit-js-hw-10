@@ -10,12 +10,11 @@ const refs = {
   countryInfo: document.querySelector('.country-info'),
 }
 
-refs.inputField.addEventListener('input', onInputFill)
+refs.inputField.addEventListener('input', debounce(onInputFill, 300));
 
 function onInputFill(event) {
   event.preventDefault();
-  const trimmedInput = event.currentTarget.value.trim();
-  console.log(trimmedInput);
+  const trimmedInput = event.target.value.trim();
 
   if (trimmedInput === '') {
     onInputClear();
@@ -23,7 +22,7 @@ function onInputFill(event) {
   }
 
   fetchCountries(trimmedInput).then(array => {
-      console.log(array);
+
       if (array.length >= 10) {
         onTooManyCountries();
       } else if (array.length < 10 && array.length >= 2) {
